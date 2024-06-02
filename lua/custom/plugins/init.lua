@@ -7,6 +7,11 @@
 vim.keymap.set('n', '-', ':Ex<CR>')
 vim.keymap.set('i', 'jk', '<ESC>')
 
+vim.keymap.set('n', '<leader>v', ':vsp ~/.config/nvim/lua/custom/plugins/init.lua<CR>')
+vim.keymap.set('n', '<leader>d', ':vsp %:h/<c-z>')
+vim.keymap.set('n', '<leader>e', ':e %:h/<c-z>')
+-- vim.key
+
 -- Initialize lsp_signatures for intellisense
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
