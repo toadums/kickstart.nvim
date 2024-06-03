@@ -6,6 +6,7 @@
 -- Custom Keybinds
 vim.keymap.set('n', '-', ':Ex<CR>')
 vim.keymap.set('i', 'jk', '<ESC>')
+vim.keymap.set('n', '<leader>w', ':w<CR>')
 
 vim.keymap.set('n', '<leader>v', ':vsp ~/.config/nvim/lua/custom/plugins/init.lua<CR>')
 vim.keymap.set('n', '<leader>d', ':vsp %:h/<c-z>')

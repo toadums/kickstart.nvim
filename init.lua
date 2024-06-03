@@ -576,6 +576,7 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
+        tailwindcss = {},
         --
 
         lua_ls = {
@@ -693,6 +694,8 @@ require('lazy').setup({
           --   end,
           -- },
         },
+
+        { 'roobert/tailwindcss-colorizer-cmp.nvim', config = true },
       },
       'saadparwaiz1/cmp_luasnip',
 
@@ -771,7 +774,16 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'tailwindcss' },
         },
+        opts = function(_, opts)
+          -- original LazyVim kind icon formatter
+          local format_kinds = opts.formatting.format
+          opts.formatting.format = function(entry, item)
+            format_kinds(entry, item) -- add icons
+            return require('tailwindcss-colorizer-cmp').formatter(entry, item)
+          end
+        end,
       }
     end,
   },
