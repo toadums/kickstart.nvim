@@ -11,20 +11,7 @@ vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>v', ':vsp ~/.config/nvim/lua/custom/plugins/init.lua<CR>')
 vim.keymap.set('n', '<leader>d', ':vsp %:h/<c-z>')
 vim.keymap.set('n', '<leader>e', ':e %:h/<c-z>')
--- vim.key
 
--- Initialize lsp_signatures for intellisense
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(args)
-    local bufnr = args.buf
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if vim.tbl_contains({ 'null-ls' }, client.name) then -- blacklist lsp
-      return
-    end
-    require('lsp_signature').on_attach({
-      -- ... setup options here ...
-    }, bufnr)
-  end,
-})
+-- vim.cmd [[autocmd VimEnter * Copilot setup]]
 
 return {}
