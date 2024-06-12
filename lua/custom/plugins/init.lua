@@ -12,6 +12,7 @@ vim.keymap.set('n', '<leader>v', ':vsp ~/.config/nvim/lua/custom/plugins/init.lu
 vim.keymap.set('n', '<leader>d', ':vsp %:h/<c-z>')
 vim.keymap.set('n', '<leader>e', ':e %:h/<c-z>')
 
--- vim.cmd [[autocmd VimEnter * Copilot setup]]
+-- Config
+vim.opt.termguicolors = true
 
 return {}
