@@ -4,7 +4,7 @@
 -- See the kickstart.nvim README for more information
 
 -- Custom Keybinds
-vim.keymap.set('n', '-', ':Ex<CR>')
+vim.keymap.set('n', '-', ':Oil<CR>')
 vim.keymap.set('i', 'jk', '<ESC>')
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 
