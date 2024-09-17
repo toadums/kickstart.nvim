@@ -557,7 +557,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        tsserver = {
+        ts_ls = {
           capabilities = {
             textDocument = {
               completion = {
@@ -596,11 +596,6 @@ require('lazy').setup({
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
-
-            -- https://github.com/neovim/nvim-lspconfig/pull/3232
-            if server_name == 'tsserver' then
-              server_name = 'ts_ls'
-            end
 
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
