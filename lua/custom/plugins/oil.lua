@@ -17,6 +17,10 @@ return {
       view_options = {
         show_hidden = true,
       },
+      win_options = {
+        -- Show path in winbar. Copied from https://github.com/stevearc/oil.nvim/issues/301#issuecomment-2399987685
+        winbar = "%#@attribute.builtin#%{substitute(v:lua.require('oil').get_current_dir(), '^' . $HOME, '~', '')}",
+      },
     }
   end,
 }
